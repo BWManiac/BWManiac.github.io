@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="topnav content">
+        <a href="./home.html">Home</a>
+        <a href="./challenges.html">Challenges</a>
+        <a href="./achievements.html">Achievements</a>
+        <a href="./statistics.html">Statistics</a>
+    </div>
+    <h1>statistics</h1>
+
+    <div class="content">
+        <h2>Run Statistics</h2>
+        <span>Total Miles:</span>
+        <span id="totalMiles">0</span>
+        </br>
+        <span>Total Time:</span>
+        <span id="totalTime">0</span>
+        </br>
+    </div>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDzTXkKSV00p8ZGuuGM4IBqY4ovK_T74bQ",
+            authDomain: "head-start-1b436.firebaseapp.com",
+            databaseURL: "https://head-start-1b436.firebaseio.com",
+            projectId: "head-start-1b436",
+            storageBucket: "head-start-1b436.appspot.com",
+            messagingSenderId: "196160571499"
+
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true }); 
+    </script>
+
+    <script>
+        const totalMiles = document.querySelector('#totalMiles');
+        const totalTime = document.querySelector('#totalTime');
+
+        let TotalMiles = 0;
+        let TotalTime = 0;
+
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     this.updateStats();
+        //     totalMiles.innerText = "17";
+        // }, false);
+
+        window.onload = function () {
+
+            updateStats();
+
+        }
+
+        function updateStats() {
+
+            TotalMiles = 0;
+            TotalTime = 0;
+
+            db.collection('cafes').get().then((snapshot) => {
+                snapshot.docs.forEach(doc => {
+                    TotalMiles += Number(doc.data().name);
+                    totalMiles.innerText = TotalMiles
+                    TotalTime += Number(doc.data().city);
+                    totalTime.innerText = TotalTime
+
+                })
+            })
+        }
+    </script>
+
+</body>
+
+</html>
