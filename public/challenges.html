@@ -77,7 +77,7 @@
             </form>
         </div>
 
-    <script>
+        <script>
         const win = document.querySelector('#win');
 
         let TotalMiles = 0;
@@ -102,6 +102,8 @@
                     if (TotalMiles / 2 >= 3) {
                         if (TotalTime / 2 >= 30) {
                             win.innerText = "They lost";
+                            alert("You win!");
+
                         }
                     }
 
