@@ -1,13 +1,14 @@
 body{
-    background: beige;
+    background: #473592;
     font-family: ubuntu;
+    font-family: 'Muli', sans-serif;
 }
 
 h1{
-    color: rgb(0, 0, 0);
+    font-family: 'Dosis', sans-serif;
+    color: white;
     font-size: 64px;
     letter-spacing: 2px;
-    margin-top: 80px;
     text-align: center;
 }
 
@@ -16,7 +17,8 @@ h1{
     max-width: 400px;
     margin: 10px auto;
     padding:  20px 30px;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    border-radius:10px;
 }
 
 ul{
@@ -89,19 +91,17 @@ form:after{
 
 button{
     border: 0;
-    background: #fff;
+    background: #7EA0B5;
     border-radius: 10px;
     padding: 13px;
-    width: 14%;
     box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
     font-weight: bold;
     letter-spacing: 1px;
-    color: #999;
+    color:white;
 }
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
   }
   
   .topnav {
