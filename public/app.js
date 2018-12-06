@@ -55,6 +55,7 @@ form.addEventListener('submit', (e) => {
     });
     form.name.value = '';
     form.city.value = '';
+    alert("submit");
 });
 
 

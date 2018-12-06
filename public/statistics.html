@@ -2,32 +2,47 @@
 <html>
 
 <head>
-
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis|Muli" rel="stylesheet">
-
-
 </head>
 
 <body>
-    <div class="topnav content">
-        <a href="./home.html">Home</a>
-        <a href="./challenges.html">Challenges</a>
-        <a href="./achievements.html">Achievements</a>
-        <a href="./statistics.html">Statistics</a>
+    <div class="navigation">
+        <a href="./home.html">
+            <img src="./img/Chaser home green.png" alt="achievements" style="width:50px;height:50px;border:0;margin:0px 20px">
+        </a>
+        <a href="./challenges.html">
+            <img src="./img/Chaser competition green.png" alt="achievements" style="width:50px;height:50px;border:0;margin:0px 20px">
+        </a>
+        <a href="./achievements.html">
+            <img src="./img/Chaser achievements green.png" alt="achievements" style="width:50px;height:50px;border:0;margin:0px 20px">
+        </a>
+        <a href="./statistics.html">
+            <img src="./img/Chaser statistics green.png" alt="achievements" style="width:50px;height:50px;border:0;margin:0px 20px">
+        </a>
     </div>
     <h1>STATISTICS</h1>
 
     <div class="content">
-        <h2>Run Statistics</h2>
-        <span>Total Miles:</span>
-        <span id="totalMiles">0</span>
-        </br>
-        <span>Total Time:</span>
-        <span id="totalTime">0</span>
-        </br>
+        <h2>
+            <span> Total Miles:</span>
+            <span id="totalMiles">0</span>
+        </h2>
+        <hr>
+        <h2>
+            <span> Total Time:</span>
+            <span id="totalTime">0</span>
+        </h2>
+        <hr>
+        <h2>
+                <span>Losses: 1</span>
+            </h2>
+            <hr>
+            <h2>
+                    <span>Wins: 2</span>
+                </h2>
     </div>
 
     <script>
@@ -39,7 +54,6 @@
             projectId: "head-start-1b436",
             storageBucket: "head-start-1b436.appspot.com",
             messagingSenderId: "196160571499"
-
         };
         firebase.initializeApp(config);
         const db = firebase.firestore();
@@ -49,38 +63,30 @@
     <script>
         const totalMiles = document.querySelector('#totalMiles');
         const totalTime = document.querySelector('#totalTime');
-
         let TotalMiles = 0;
         let TotalTime = 0;
-
         // document.addEventListener('DOMContentLoaded', function() {
         //     this.updateStats();
         //     totalMiles.innerText = "17";
         // }, false);
-
         window.onload = function () {
-
             updateStats();
-
         }
 
         function updateStats() {
 
             TotalMiles = 0;
             TotalTime = 0;
-
+            
             db.collection('cafes').get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
                     TotalMiles += Number(doc.data().name);
                     totalMiles.innerText = TotalMiles
                     TotalTime += Number(doc.data().city);
                     totalTime.innerText = TotalTime
-
                 })
             })
         }
     </script>
-
 </body>
-
 </html>

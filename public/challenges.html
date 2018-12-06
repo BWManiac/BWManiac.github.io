@@ -5,24 +5,52 @@
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
     <link rel="stylesheet" href="styles.css">
-    
+
     <script src="app.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Dosis|Muli" rel="stylesheet">
 
 </head>
 
 <body>
-    <div class="topnav content">
-        <a href="./home.html">Home</a>
-        <a href="./challenges.html">Challenges</a>
-        <a href="./achievements.html">Achievements</a>
-        <a href="./statistics.html">Statistics</a>
-        <a href="./challengesOLD.html">OLD Challenges</a>
+    <div class="navigation">
+        <a href="./home.html">
+            <img src="./img/Chaser home green.png" alt="achievements" style="width:50px;height:50px;border:0;margin:0px 20px">
+        </a>
+        <a href="./challenges.html">
+            <img src="./img/Chaser competition green.png" alt="achievements" style="width:50px;height:50px;border:0;margin:0px 20px">
+        </a>
+        <a href="./achievements.html">
+            <img src="./img/Chaser achievements green.png" alt="achievements" style="width:50px;height:50px;border:0;margin:0px 20px">
+        </a>
+        <a href="./statistics.html">
+            <img src="./img/Chaser statistics green.png" alt="achievements" style="width:50px;height:50px;border:0;margin:0px 20px">
+        </a>
+    </div>
+    <h1>COMPETITION</h1>
+    <div class="content">
+        <h2>Active Challenges</h2>
+        <hr>
+        <div style="vertical-align:center">
+            <img src="./img/Chaser user.png" alt="achievements" style="width:50px;height:50px;margin:0px 0px;display: inline">
+            <b>Kristen</b> | 7 Miles | 120 minutes | <em>Dinner</em>
+            <img src="./img/Chaser thumbs down.png" alt="achievements" style="width:50px;height:50px;margin:0px 0px;display: inline">
+        </div>
+        <hr>
+        <div style="vertical-align:center">
+            <img src="./img/Chaser user.png" alt="achievements" style="width:50px;height:50px;margin:0px 0px;display: inline">
+            <b>Brittany</b> | 3 Miles | 50 minutes | <em>Dinner</em>
+            <img src="./img/Chaser thumbs up.png" alt="achievements" style="width:50px;height:50px;margin:0px 0px;display: inline">
+        </div>
+        <hr>
+        <div style="vertical-align:center">
+            <img src="./img/Chaser user.png" alt="achievements" style="width:50px;height:50px;margin:0px 0px;display: inline">
+            <b>Jacobzen</b> | 5 Miles | 60 minutes | <em>Boba</em>
+            <img src="./img/Chaser thumbs up.png" alt="achievements" style="width:50px;height:50px;margin:0px 0px;display: inline">
+        </div>
     </div>
 
-    <h1>CHALLENGES</h1>
-
-    <div class="content">
+    </div>
+    <!-- <div class="content">
         <h2>Active Challenges</h2>
         <table style="width:100%">
             <tr>
@@ -67,27 +95,29 @@
                 <td style="color:red;"><b>They won</b></td>
             </tr>
         </table>
-    </div>
+    </div> -->
 
     <div class="content">
-            <h2>Challenge a friend</h2>
-            <form id="challenge-form">
-                <input type="text" name="email" placeholder="Email">
-                <input type="text" name="distance" placeholder="Distance (In miles)">
-                <input type="text" name="city" placeholder="Time (In minutes)">
-                <input type="text" name="reward" placeholder="Reward">
-                <button>Send Challenge</button>
-            </form>
-        </div>
+        <h2>Challenge a friend</h2>
+        <form id="challenge-form">
+            <input type="text" name="email" placeholder="Email">
 
-        <script>
+            <input type="text" name="distance" placeholder="Distance (In miles)">
+
+            <input type="text" name="city" placeholder="Time (In minutes)">
+
+            <input type="text" name="reward" placeholder="Reward">
+
+            <button onclick="myFunction()">Submit</button>
+        </form>
+    </div>
+
+    <script>
         const win = document.querySelector('#win');
-
         let TotalMiles = 0;
         let TotalTime = 0;
-
         window.onload = function () {
-            //                alert("Hello! I am an alert box!!");
+            alert("Hello! I am an alert box!!");
             updateChallenge();
 
         }
@@ -114,7 +144,11 @@
             })
         }
 
-
+    </script>
+    <script>
+        function myFunction() {
+            alert("Submitted");
+        }
     </script>
 
 </body>
