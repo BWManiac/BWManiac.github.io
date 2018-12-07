@@ -9,7 +9,6 @@ const fiveMiles = document.querySelector('#fiveMiles');
 
 const win = document.querySelector('#win');
 
-
 let TotalMiles = 0;
 let TotalTime = 0;
 // create element & render cafe
@@ -38,7 +37,6 @@ function renderCafe(doc) {
     });
 }
 
-
 // getting data
 // db.collection('cafes').orderBy('city').get().then(snapshot => {
 //     snapshot.docs.forEach(doc => {
@@ -55,7 +53,6 @@ form.addEventListener('submit', (e) => {
     });
     form.name.value = '';
     form.city.value = '';
-    alert("submit");
 });
 
 
@@ -132,9 +129,7 @@ db.collection('cafes').orderBy('city').onSnapshot(snapshot => {
         }
 
     });
-
     updateStats();
     updateAchievements();
     updateChallenge();    
-
 });

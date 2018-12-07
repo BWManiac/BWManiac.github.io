@@ -20,7 +20,6 @@ h1{
     box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
     border-radius:10px;
     text-align: center;
-
 }
 
 ul{
@@ -97,7 +96,7 @@ button{
     box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
     font-weight: bold;
     letter-spacing: 1px;
-    color:black;
+    color:white;
 }
 
 body {
@@ -130,13 +129,12 @@ body {
 
   .navigation {
 
-    padding: 14px 16px 0px 16px;
+    padding: 40px 16px 0px 16px;
     text-align: center;
     border-bottom: 4px solid #7EA0B5;
     margin: 0 auto;
         padding-bottom: 10px;
-
-        width: 50%;
+        width: 75%;
             max-width: 400px;
  
   }

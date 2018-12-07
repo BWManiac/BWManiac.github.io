@@ -6,7 +6,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis|Muli" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width ,initial-scale=.8,maximum-scale=1,user-scalable=no"/> 
 </head>
 
 <body>
@@ -28,16 +28,15 @@
         </a>
         <a href="./statistics.html">
             <img src="./img/Chaser statistics green.png" alt="achievements" style="width:50px;height:50px;border:0;margin:0px 20px">
-        </a>    
+        </a>
     </div>
     <h1>
         ACHIEVEMENTS
-
     </h1>
 
     <div class="content">
         <h2>Lvl 1: Tortoise</h2>
-            <img src="./img/Chaser tortoise.png" alt="achievements" style="width:350px;height:350px;border:0;margin:0px 20px">
+        <img src="./img/Chaser tortoise.png" alt="achievements" style="width:350px;height:350px;border:0;margin:0px 20px">
 
     </div>
 
@@ -45,7 +44,14 @@
 
     <div class="content">
         <h2>Checkpoints</h2>
-        <table style="width:100%">
+        Distance (miles) - 30
+    </br>
+        Time (minutes) - 300
+    </br>
+        Friends Made - 10
+    </br>
+        Challenges Won - 20
+        <!-- <table style="width:100%">
             <tr>
             </tr>
             <tr>
@@ -56,8 +62,8 @@
                 <td>Run 50 minutes</td>
                 <td id="fiveMiles">x</td>
             </tr>
-        </table>
-    </div> 
+        </table> -->
+    </div>
 
 
 
@@ -81,38 +87,38 @@
 
 
     <script>
-            const threeMiles = document.querySelector('#threeMiles');
-            const fiveMiles = document.querySelector('#fiveMiles');
+        const threeMiles = document.querySelector('#threeMiles');
+        const fiveMiles = document.querySelector('#fiveMiles');
 
-            let TotalMiles = 0;
-            let TotalTime = 0;
+        let TotalMiles = 0;
+        let TotalTime = 0;
 
-            window.onload = function () {
-//                alert("Hello! I am an alert box!!");
-                updateAchievements();
-                
-            }
+        window.onload = function () {
+            //                alert("Hello! I am an alert box!!");
+            updateAchievements();
 
-            function updateAchievements() {
-                TotalMiles = 0;
-                TotalTime = 0;
+        }
 
-                db.collection('cafes').get().then((snapshot) => {
-                    snapshot.docs.forEach(doc => {
-                        TotalMiles += Number(doc.data().name);
-                        TotalTime += Number(doc.data().city);
-                        if (TotalMiles >= 3) {
-                            threeMiles.innerText = "unlocked!";
-                        }
-                        console.log(TotalMiles);
+        function updateAchievements() {
+            TotalMiles = 0;
+            TotalTime = 0;
 
-                        if (TotalMiles  >= 5) {
-                            fiveMiles.innerText = "unlocked!";
-                        }
-                    })
+            db.collection('cafes').get().then((snapshot) => {
+                snapshot.docs.forEach(doc => {
+                    TotalMiles += Number(doc.data().name);
+                    TotalTime += Number(doc.data().city);
+                    if (TotalMiles >= 3) {
+                        threeMiles.innerText = "unlocked!";
+                    }
+                    console.log(TotalMiles);
+
+                    if (TotalMiles >= 5) {
+                        fiveMiles.innerText = "unlocked!";
+                    }
                 })
-            }
-        
+            })
+        }
+
     </script>
 
 </body>
